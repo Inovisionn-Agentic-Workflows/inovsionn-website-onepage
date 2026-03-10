@@ -711,8 +711,8 @@ const Footer = () => {
                         &copy; 2026 Inovisionn. All rights reserved.
                     </p>
                     <div className="flex items-center gap-4 text-white/40 text-xs font-data">
-                        <a href="/privacyverklaring.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Privacybeleid</a>
-                        <a href="/algemene-voorwaarden.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Algemene Voorwaarden</a>
+                        <Link to="/privacy" className="hover:text-white transition-colors">Privacybeleid</Link>
+                        <Link to="/voorwaarden" className="hover:text-white transition-colors">Algemene Voorwaarden</Link>
                     </div>
                 </div>
                 <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10">
@@ -724,87 +724,139 @@ const Footer = () => {
     );
 };
 
-const Home = () => {
+// --- Legal Components ---
+
+const ScrollToTop = () => {
+    const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+    return null;
+};
+
+const LegalLayout = ({ title, children }) => {
     return (
-        <div className="min-h-screen bg-background text-dark font-heading selection:bg-accent selection:text-primary">
+        <div className="min-h-screen bg-background text-dark font-heading selection:bg-accent selection:text-primary relative overflow-hidden">
             <div className="noise-overlay"></div>
             <Navbar />
-            <Hero />
-            <Features />
-            <Philosophy />
-            <Protocol />
-            <CTA />
-            <ContactSection />
+
+            <div className="relative z-10 pt-32 pb-20 px-6">
+                <div className="max-w-4xl mx-auto">
+                    <Link to="/" className="inline-flex items-center gap-2 text-primary/60 hover:text-accent transition-colors mb-8 group">
+                        <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" /> Terug naar Home
+                    </Link>
+
+                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-primary mb-12 leading-tight">
+                        {title}<span className="text-accent">.</span>
+                    </h1>
+
+                    <div className="bg-white/50 backdrop-blur-sm border border-dark/5 rounded-[2rem] p-8 md:p-12 shadow-xl prose prose-slate max-w-none text-dark/80 leading-relaxed font-sans">
+                        {children}
+                    </div>
+                </div>
+            </div>
+
             <Footer />
         </div>
     );
 };
 
-const Forbidden = () => {
+const PrivacyPolicy = () => {
     return (
-        <div className="min-h-screen bg-background text-dark font-heading selection:bg-accent selection:text-primary relative overflow-hidden flex items-center justify-center p-6 sm:p-12">
-            <div className="noise-overlay"></div>
-            <div className="absolute top-0 right-0 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-red-500/5 rounded-full blur-[60px] md:blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+        <LegalLayout title="Privacyverklaring">
+            <h2 className="text-2xl font-bold text-primary mb-4">Laatste update: 02 maart 2026</h2>
+            <p className="mb-6">Inovisionn respecteert uw privacy en zorgt ervoor dat de persoonlijke informatie die u ons verstrekt vertrouwelijk en zorgvuldig wordt behandeld. In deze verklaring leggen wij uit hoe wij uw gegevens verzamelen, gebruiken en beschermen, specifiek in de context van onze AI-dienstverlening.</p>
 
-            <div className="max-w-4xl w-full text-center relative z-10">
-                <div className="mb-8 md:mb-12">
-                    <h1 className="text-8xl md:text-[12rem] font-bold tracking-tight text-primary leading-none opacity-10 select-none">
-                        403
-                    </h1>
-                    <div className="mt-[-4rem] md:mt-[-8rem]">
-                        <h2 className="text-3xl md:text-6xl font-bold tracking-tight text-primary mb-4 leading-tight">
-                            Protocol: <span className="font-drama italic text-red-500 capitalize">Toegang Geweigerd.</span>
-                        </h2>
-                        <p className="text-dark/60 text-base md:text-lg max-w-lg mx-auto mb-10">
-                            U heeft niet de benodigde autorisatie om dit onderdeel te benaderen. Voor de Lead Scanner geldt een limiet van 1 scan per adres.
-                        </p>
-                    </div>
-                </div>
+            <h3 className="text-xl font-bold text-primary mt-8 mb-4">1. Wanneer is deze privacyverklaring van toepassing?</h3>
+            <p className="mb-4">Deze verklaring is van toepassing op alle persoonsgegevens die Inovisionn verwerkt van iedereen die contact heeft (gehad) met Inovisionn, zoals bezoekers van onze website (https://www.inovisionn.com/), klanten, en zakelijke contactpersonen.</p>
 
-                <Link to="/" className="btn-magnetic bg-primary text-white px-8 md:px-12 py-3.5 md:py-4 rounded-full font-bold inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all hover:scale-105">
-                    <ArrowLeft size={18} /> Terug naar Home
-                </Link>
-            </div>
-        </div>
+            <h3 className="text-xl font-bold text-primary mt-8 mb-4">2. Wie is de verwerkingsverantwoordelijke?</h3>
+            <p className="mb-4">Inovisionn is de verantwoordelijke voor de verwerking van persoonsgegevens zoals weergegeven in deze privacyverklaring.</p>
+            <ul className="list-disc pl-6 mb-4 space-y-1">
+                <li><strong>Bedrijfsnaam:</strong> Inovisionn</li>
+                <li><strong>Adres:</strong> Abdis Susannastraat 15, 6041VK Roermond</li>
+                <li><strong>KvK-nummer:</strong> 91930391</li>
+                <li><strong>Contactpersoon:</strong> Niels Heijman</li>
+                <li><strong>E-mailadres:</strong> inovisionn@hotmail.com</li>
+            </ul>
+
+            <h3 className="text-xl font-bold text-primary mt-8 mb-4">3. Van wie verwerken wij gegevens?</h3>
+            <p className="mb-4">Wij verwerken persoonsgegevens van bezoekers van onze website, (potentiële) klanten die onze AI-diensten afnemen, en contactpersonen bij leveranciers of partners.</p>
+
+            <h3 className="text-xl font-bold text-primary mt-8 mb-4">4. Welke gegevens verwerken wij?</h3>
+            <p className="mb-4">Wij verwerken gegevens zoals contactgegevens (naam, e-mail, telefoon), betaalgegevens, technische data voor AI-workflows, en interactiegegevens uit gesprekken.</p>
+
+            <h3 className="text-xl font-bold text-primary mt-8 mb-4">5. Grondslagen en doelen van de verwerking</h3>
+            <p className="mb-4">Wij verwerken uw gegevens voor de uitvoering van overeenkomsten, om te voldoen aan wettelijke verplichtingen (zoals de fiscale bewaarplicht), en op basis van gerechtvaardigd belang voor marketing en verbetering.</p>
+
+            <h3 className="text-xl font-bold text-primary mt-8 mb-4">6. Specifieke bepalingen voor AI-Dienstverlening</h3>
+            <p className="mb-4"><strong>6.1 Transparantie (EU AI Act):</strong> Wij informeren u dat onze diensten AI-systemen gebruiken. U bent als operator verantwoordelijk om uw eindgebruikers hierover te informeren.</p>
+            <p className="mb-4"><strong>6.2 Gegevensgebruik en Training:</strong> Wij garanderen dat data via zakelijke API's niet wordt gebruikt voor het trainen van publieke modellen.</p>
+            <p className="mb-4"><strong>6.3 Privacy by Design:</strong> Wij minimaliseren de verzending van gevoelige gegevens naar externe modellen.</p>
+
+            <h3 className="text-xl font-bold text-primary mt-8 mb-4">7. Bewaartermijnen</h3>
+            <p className="mb-4">Klantdossiers worden tot 2 jaar na beëindiging bewaard, administratieve gegevens 7 jaar conform de wet.</p>
+
+            <h3 className="text-xl font-bold text-primary mt-8 mb-4">8. Delen met derden</h3>
+            <p className="mb-4">Wij verkopen uw gegevens nooit. Gegevens worden alleen gedeeld met noodzakelijke sub-verwerkers onder strikte verwerkersovereenkomsten.</p>
+
+            <p className="mt-12 text-sm italic">Voor een volledige versie of specifieke vragen kunt u contact opnemen via inovisionn@hotmail.com.</p>
+        </LegalLayout>
     );
 };
 
-const NotFound = () => {
+const TermsOfService = () => {
     return (
-        <div className="min-h-screen bg-background text-dark font-heading selection:bg-accent selection:text-primary relative overflow-hidden flex items-center justify-center p-6 sm:p-12">
-            <div className="noise-overlay"></div>
-            <div className="absolute top-0 right-0 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-accent/5 rounded-full blur-[60px] md:blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+        <LegalLayout title="Algemene Voorwaarden">
+            <h2 className="text-2xl font-bold text-primary mb-4">Artikel 1 - Definities</h2>
+            <p className="mb-4">Inovisionn, gevestigd te Roermond, KvK 91930391. Klant: de (rechts)persoon die een overeenkomst aangaat met Inovisionn.</p>
 
-            <div className="max-w-4xl w-full text-center relative z-10">
-                <div className="mb-8 md:mb-12">
-                    <h1 className="text-8xl md:text-[12rem] font-bold tracking-tight text-primary leading-none opacity-10 select-none">
-                        404
-                    </h1>
-                    <div className="mt-[-4rem] md:mt-[-8rem]">
-                        <h2 className="text-3xl md:text-6xl font-bold tracking-tight text-primary mb-4 leading-tight">
-                            Status: <span className="font-drama italic text-accent capitalize">Niet Gevonden.</span>
-                        </h2>
-                        <p className="text-dark/60 text-base md:text-lg max-w-lg mx-auto mb-10">
-                            De opgevraagde parameter bestaat niet in onze architectuur. Laten we je terugbrengen naar de hoofdpagina.
-                        </p>
-                    </div>
-                </div>
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">Artikel 2 - Toepasselijkheid</h2>
+            <p className="mb-4">Deze voorwaarden gelden voor alle offertes, werkzaamheden en overeenkomsten van Inovisionn.</p>
 
-                <Link to="/" className="btn-magnetic bg-primary text-white px-8 md:px-12 py-3.5 md:py-4 rounded-full font-bold inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all hover:scale-105">
-                    <ArrowLeft size={18} /> Terug naar Home
-                </Link>
-            </div>
-        </div>
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">Artikel 3 - Aanbiedingen en offertes</h2>
+            <p className="mb-4">Offertes zijn vrijblijvend en maximaal 2 weken geldig.</p>
+
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">Artikel 5 - Prijzen</h2>
+            <p className="mb-4">Prijzen zijn in euro, exclusief btw. Inovisionn mag prijzen aanpassen (max 10% per jaar).</p>
+
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">Artikel 6 - Betalingen</h2>
+            <p className="mb-4">1. Aanbetaling tot 50% kan worden verlangd. 2. Betalingstermijn is 30 dagen na factuurdatum. 3. Bij overschrijding is de Klant direct in verzuim.</p>
+
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">Artikel 13 - Garantie</h2>
+            <p className="mb-4">De overeenkomst bevat slechts een inspanningsverplichting. Inovisionn garandeert niet dat AI-output altijd 100% accuraat is.</p>
+
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">Artikel 14 - Uitvoering</h2>
+            <p className="mb-4">1. Inovisionn voert werk naar beste inzicht uit. 2. Klant gebruikt de workflows uitsluitend voor legale doeleinden en conform Service Terms van AI-providers.</p>
+
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">Artikel 18 - Intellectueel eigendom</h2>
+            <p className="mb-4">1. Inovisionn behoudt rechten op de onderliggende methodiek (prompts, scripts, workflows). 2. Klant verkrijgt gebruiksrechten op de specifieke Output na volledige betaling.</p>
+
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">Artikel 19 - Geheimhouding</h2>
+            <p className="mb-4">Partijen houden vertrouwelijke informatie geheim tijdens en tot 3 jaar na de overeenkomst.</p>
+
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">Artikel 25 - Aansprakelijkheid</h2>
+            <p className="mb-4">Aansprakelijkheid is beperkt tot het factuurbedrag. Indirecte schade is uitgesloten.</p>
+
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">Artikel 28 - Overmacht</h2>
+            <p className="mb-4">Inovisionn is niet aansprakelijk bij storingen van AI-providers of wijzigingen in API-voorwaarden.</p>
+
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">Artikel 33 - Toepasselijk recht</h2>
+            <p className="mb-4">Nederlands recht is van toepassing. De rechter te Roermond is exclusief bevoegd.</p>
+        </LegalLayout>
     );
 };
 
 export default function App() {
     return (
         <Router>
+            <ScrollToTop />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/lead-scanner" element={<LeadScanner />} />
                 <Route path="/forbidden" element={<Forbidden />} />
+                <Route path="/privacy" element={<PrivacyPolicy />} />
+                <Route path="/voorwaarden" element={<TermsOfService />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </Router>
