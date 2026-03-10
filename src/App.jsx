@@ -847,9 +847,9 @@ const TermsOfService = () => {
     );
 };
 
-export default function App() {
+const AppRoutes = () => {
     return (
-        <Router>
+        <>
             <ScrollToTop />
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -859,6 +859,14 @@ export default function App() {
                 <Route path="/voorwaarden" element={<TermsOfService />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
+        </>
+    );
+};
+
+export default function App() {
+    return (
+        <Router>
+            <AppRoutes />
         </Router>
     );
 }
