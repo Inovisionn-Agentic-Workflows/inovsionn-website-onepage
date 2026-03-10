@@ -711,8 +711,8 @@ const Footer = () => {
                         &copy; 2026 Inovisionn. All rights reserved.
                     </p>
                     <div className="flex items-center gap-4 text-white/40 text-xs font-data">
-                        <a href="#" className="hover:text-white transition-colors">Privacybeleid</a>
-                        <a href="#" className="hover:text-white transition-colors">Algemene Voorwaarden</a>
+                        <a href="/privacyverklaring.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Privacybeleid</a>
+                        <a href="/algemene-voorwaarden.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Algemene Voorwaarden</a>
                     </div>
                 </div>
                 <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10">
