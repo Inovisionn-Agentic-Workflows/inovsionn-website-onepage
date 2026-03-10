@@ -764,15 +764,15 @@ const LegalLayout = ({ title, children }) => {
 const PrivacyPolicy = () => {
     return (
         <LegalLayout title="Privacyverklaring">
-            <h2 className="text-2xl font-bold text-primary mb-4">Laatste update: 02 maart 2026</h2>
+            <p className="mb-4 text-dark/60 italic">Laatste update: 02 maart 2026</p>
             <p className="mb-6">Inovisionn respecteert uw privacy en zorgt ervoor dat de persoonlijke informatie die u ons verstrekt vertrouwelijk en zorgvuldig wordt behandeld. In deze verklaring leggen wij uit hoe wij uw gegevens verzamelen, gebruiken en beschermen, specifiek in de context van onze AI-dienstverlening.</p>
 
-            <h3 className="text-xl font-bold text-primary mt-8 mb-4">1. Wanneer is deze privacyverklaring van toepassing?</h3>
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">1. Wanneer is deze privacyverklaring van toepassing?</h2>
             <p className="mb-4">Deze verklaring is van toepassing op alle persoonsgegevens die Inovisionn verwerkt van iedereen die contact heeft (gehad) met Inovisionn, zoals bezoekers van onze website (https://www.inovisionn.com/), klanten, en zakelijke contactpersonen.</p>
 
-            <h3 className="text-xl font-bold text-primary mt-8 mb-4">2. Wie is de verwerkingsverantwoordelijke?</h3>
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">2. Wie is de verwerkingsverantwoordelijke?</h2>
             <p className="mb-4">Inovisionn is de verantwoordelijke voor de verwerking van persoonsgegevens zoals weergegeven in deze privacyverklaring.</p>
-            <ul className="list-disc pl-6 mb-4 space-y-1">
+            <ul className="list-none space-y-2 mb-4">
                 <li><strong>Bedrijfsnaam:</strong> Inovisionn</li>
                 <li><strong>Adres:</strong> Abdis Susannastraat 15, 6041VK Roermond</li>
                 <li><strong>KvK-nummer:</strong> 91930391</li>
@@ -780,27 +780,84 @@ const PrivacyPolicy = () => {
                 <li><strong>E-mailadres:</strong> inovisionn@hotmail.com</li>
             </ul>
 
-            <h3 className="text-xl font-bold text-primary mt-8 mb-4">3. Van wie verwerken wij gegevens?</h3>
-            <p className="mb-4">Wij verwerken persoonsgegevens van bezoekers van onze website, (potentiële) klanten die onze AI-diensten afnemen, en contactpersonen bij leveranciers of partners.</p>
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">3. Van wie verwerken wij gegevens?</h2>
+            <p className="mb-4">Wij verwerken persoonsgegevens van:</p>
+            <ul className="list-disc ml-6 space-y-2 mb-4">
+                <li>Bezoekers van onze website.</li>
+                <li>(Potentiële) klanten die onze AI-diensten afnemen.</li>
+                <li>Contactpersonen bij leveranciers of partners.</li>
+            </ul>
 
-            <h3 className="text-xl font-bold text-primary mt-8 mb-4">4. Welke gegevens verwerken wij?</h3>
-            <p className="mb-4">Wij verwerken gegevens zoals contactgegevens (naam, e-mail, telefoon), betaalgegevens, technische data voor AI-workflows, en interactiegegevens uit gesprekken.</p>
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">4. Welke gegevens verwerken wij?</h2>
+            <p className="mb-4">Wij verwerken de volgende persoonsgegevens die u rechtstreeks aan ons verstrekt:</p>
+            <ul className="list-disc ml-6 space-y-2 mb-4">
+                <li><strong>Contactgegevens:</strong> Naam, bedrijfsnaam, e-mailadres, telefoonnummer.</li>
+                <li><strong>Betaalgegevens:</strong> Factuuradres en bankgegevens (indien van toepassing voor facturatie).</li>
+                <li><strong>Technische data:</strong> Inputgegevens (zoals teksten, documenten of data-feeds) die u verstrekt voor de configuratie van AI-workflows.</li>
+                <li><strong>Interactiegegevens:</strong> Inhoud van e-mailwisselingen of chatgesprekken.</li>
+            </ul>
 
-            <h3 className="text-xl font-bold text-primary mt-8 mb-4">5. Grondslagen en doelen van de verwerking</h3>
-            <p className="mb-4">Wij verwerken uw gegevens voor de uitvoering van overeenkomsten, om te voldoen aan wettelijke verplichtingen (zoals de fiscale bewaarplicht), en op basis van gerechtvaardigd belang voor marketing en verbetering.</p>
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">5. Grondslagen en doelen van de verwerking</h2>
+            <p className="mb-4">Wij verwerken uw gegevens uitsluitend op basis van de volgende juridische grondslagen:</p>
+            <ul className="list-disc ml-6 space-y-2 mb-4">
+                <li><strong>Uitvoering van de overeenkomst:</strong> Voor het bouwen, implementeren en onderhouden van AI-automatiseringen.</li>
+                <li><strong>Wettelijke verplichting:</strong> Voor onze fiscale administratie (bewaarplicht van 7 jaar).</li>
+                <li><strong>Gerechtvaardigd belang:</strong> Voor marketingdoeleinden en het verbeteren van onze dienstverlening.</li>
+            </ul>
 
-            <h3 className="text-xl font-bold text-primary mt-8 mb-4">6. Specifieke bepalingen voor AI-Dienstverlening</h3>
-            <p className="mb-4"><strong>6.1 Transparantie (EU AI Act):</strong> Wij informeren u dat onze diensten AI-systemen gebruiken. U bent als operator verantwoordelijk om uw eindgebruikers hierover te informeren.</p>
-            <p className="mb-4"><strong>6.2 Gegevensgebruik en Training:</strong> Wij garanderen dat data via zakelijke API's niet wordt gebruikt voor het trainen van publieke modellen.</p>
-            <p className="mb-4"><strong>6.3 Privacy by Design:</strong> Wij minimaliseren de verzending van gevoelige gegevens naar externe modellen.</p>
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">6. Specifieke bepalingen voor AI-Dienstverlening</h2>
+            <p className="mb-4"><strong>6.1 Transparantie (EU AI Act):</strong> Conform Artikel 50 van de EU AI Act informeert Inovisionn u dat de geleverde diensten gebruikmaken van systemen voor kunstmatige intelligentie. Indien Inovisionn voor u een chatbot of AI-agent bouwt, bent u als "operator" verantwoordelijk om uw eindgebruikers te informeren dat zij communiceren met een AI-systeem.</p>
+            <p className="mb-4"><strong>6.2 Gegevensgebruik en Training:</strong> Inovisionn garandeert dat persoonlijke data die via zakelijke API-koppelingen (zoals OpenAI API, Google Cloud Vertex AI of Anthropic API) wordt verwerkt, niet door deze providers wordt gebruikt om hun publieke modellen te trainen. Uw data blijft vertrouwelijk binnen de afgeschermde omgeving van de betreffende service.</p>
+            <p className="mb-4"><strong>6.3 Privacy by Design:</strong> Bij het bouwen van workflows passen wij technieken toe om de verzending van gevoelige gegevens (PII - Personally Identifiable Information) naar externe AI-modellen te minimaliseren, bijvoorbeeld door anonimisering of filtering waar technisch mogelijk.</p>
 
-            <h3 className="text-xl font-bold text-primary mt-8 mb-4">7. Bewaartermijnen</h3>
-            <p className="mb-4">Klantdossiers worden tot 2 jaar na beëindiging bewaard, administratieve gegevens 7 jaar conform de wet.</p>
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">7. Bewaartermijnen</h2>
+            <p className="mb-4">Wij bewaren uw gegevens niet langer dan strikt nodig is:</p>
+            <ul className="list-disc ml-6 space-y-2 mb-4">
+                <li><strong>Klantdossiers:</strong> Tot 2 jaar na beëindiging van de overeenkomst, tenzij langer noodzakelijk voor juridische doeleinden.</li>
+                <li><strong>Administratieve gegevens:</strong> 7 jaar conform de wettelijke fiscale bewaarplicht.</li>
+                <li><strong>Marketinggegevens:</strong> Totdat u zich hiervoor afmeldt.</li>
+            </ul>
 
-            <h3 className="text-xl font-bold text-primary mt-8 mb-4">8. Delen met derden</h3>
-            <p className="mb-4">Wij verkopen uw gegevens nooit. Gegevens worden alleen gedeeld met noodzakelijke sub-verwerkers onder strikte verwerkersovereenkomsten.</p>
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">8. Delen met derden (Sub-verwerkers)</h2>
+            <p className="mb-4">Wij delen uw gegevens uitsluitend met derden als dit noodzakelijk is voor de uitvoering van de overeenkomst. Dit omvat:</p>
+            <ul className="list-disc ml-6 space-y-2 mb-4">
+                <li><strong>AI-Modelproviders:</strong> Voor het verwerken van prompts en data (bijv. OpenAI, Anthropic).</li>
+                <li><strong>Automatiseringsplatformen:</strong> Zoals Make.com voor de logica van de workflows.</li>
+                <li><strong>Hosting- en mailproviders:</strong> Voor onze website en communicatie.</li>
+            </ul>
+            <p className="mt-4 mb-4">Wij verkopen uw gegevens nooit aan derden. Met alle sub-verwerkers zijn (verwerkers)overeenkomsten gesloten die voldoen aan de AVG.</p>
 
-            <p className="mt-12 text-sm italic">Voor een volledige versie of specifieke vragen kunt u contact opnemen via inovisionn@hotmail.com.</p>
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">9. Doorgifte buiten de EER</h2>
+            <p className="mb-4">Indien gegevens buiten de Europese Economische Ruimte (EER) worden verwerkt (bijvoorbeeld in de VS), geschiedt dit uitsluitend onder bescherming van het EU-U.S. Data Privacy Framework of via door de Europese Commissie goedgekeurde modelcontractbepalingen (Standard Contractual Clauses).</p>
+
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">10. Beveiliging</h2>
+            <p className="mb-4">Inovisionn heeft passende technische en organisatorische maatregelen genomen om uw persoonsgegevens te beveiligen tegen verlies, misbruik en ongeoorloofde toegang. Dit omvat versleuteling van data, het gebruik van beveiligde verbindingen en strikte toegangscontrole voor medewerkers en vervangers.</p>
+
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">11. Uw rechten</h2>
+            <p className="mb-4">Op basis van de AVG heeft u de volgende rechten:</p>
+            <ul className="list-disc ml-6 space-y-2 mb-4">
+                <li><strong>Inzage en correctie:</strong> U mag weten welke gegevens wij van u hebben.</li>
+                <li><strong>Vergetelheid:</strong> U kunt verzoeken om verwijdering van uw gegevens.</li>
+                <li><strong>Beperking en bezwaar:</strong> U kunt de verwerking tijdelijk laten stopzetten of bezwaar maken.</li>
+                <li><strong>Dataportabiliteit:</strong> U heeft het recht uw gegevens in een gestructureerd formaat te ontvangen.</li>
+            </ul>
+            <p className="mt-4 mb-4">U kunt deze rechten uitoefenen door een e-mail te sturen naar inovisionn@hotmail.com. Wij reageren binnen vier weken.</p>
+
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">12. Klachten en Geschillen</h2>
+            <p className="mb-4">Mocht u niet tevreden zijn over hoe wij met uw privacy omgaan, dan kunt u een klacht indienen bij de Autoriteit Persoonsgegevens. Bij juridische geschillen is de rechtbank in Roermond exclusief bevoegd, en is het Nederlands recht van toepassing.</p>
+
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">13. Cookies</h2>
+            <p className="mb-4">Onze website maakt gebruik van functionele cookies die essentieel zijn voor de werking van de site (zoals afspraak-tools). Analytische cookies worden uitsluitend anoniem gebruikt en hebben geen of geringe impact op uw persoonlijke levenssfeer.</p>
+
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">14. Minderjarigen</h2>
+            <p className="mb-4">Onze diensten zijn niet bedoeld voor personen jonger dan 18 jaar. Wij verzamelen niet bewust gegevens van minderjarigen zonder toestemming van ouders of voogd.</p>
+
+            <h2 className="text-2xl font-bold text-primary mt-8 mb-4">15. Contact</h2>
+            <p className="mb-4">Voor vragen over dit privacybeleid kunt u contact opnemen via:</p>
+            <ul className="list-none space-y-1 mb-4">
+                <li><strong>E-mail:</strong> inovisionn@hotmail.com</li>
+                <li><strong>Post:</strong> Abdis Susannastraat 15, 6041VK Roermond</li>
+            </ul>
         </LegalLayout>
     );
 };
